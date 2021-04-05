@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import Layout from "../components/layout"
 import PostLink from "../components/post-link"
 import HeroHeader from "../components/heroHeader"
+import Events from "../components/events"
 
 const IndexPage = ({
   data: {
@@ -23,8 +24,9 @@ const IndexPage = ({
         <meta name="description" content={site.siteMetadata.description} />
       </Helmet>
       <HeroHeader/>
-      <h2>Blog Posts &darr;</h2>
-      <div className="grids">
+      <Events/>
+      <h1 id="blog">Was bisher geschah</h1>
+      <div class="grid threeCol">
         {Posts}
       </div>
     </Layout>
@@ -46,10 +48,16 @@ export const pageQuery = graphql`
           id
           excerpt(pruneLength: 250)
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "DD. MMMM YYYY")
             path
             title
-            thumbnail
+            thumbnail {
+              childImageSharp {
+                fluid(maxWidth: 1360) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }

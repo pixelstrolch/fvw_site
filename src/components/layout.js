@@ -2,7 +2,14 @@ import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Navigation from "../components/navigation"
 
-export default ({ children }) => {
+import "../styles/reset.css"
+import "../styles/accessibility.css"
+import "../styles/global.module.css"
+import "../styles/general.css"
+import * as style from './layout.module.css' 
+
+
+export default function Layout({ children }) {
   const data = useStaticQuery(
     graphql`
       query {
@@ -15,16 +22,24 @@ export default ({ children }) => {
     `
   )
   return (
-    <div className="site-wrapper">
-      <header className="site-header">
-        <div className="site-title">
-          <Link to="/">{data.site.siteMetadata.title}</Link>
-        </div>
+    <div className={style.overallContainer}>
+      <header className={style.site_header}>
+        <Link to="/">
+          <img
+            class="logo"
+            src="/uploads/Logo-FamilienvereinWahlen.svg"
+            width="375"
+            height="75"
+            alt={data.site.siteMetadata.title}
+          />
+        </Link>
         <Navigation />
       </header>
-      {children}
-      <footer className="site-footer">
-        <p>&copy; {new Date().getFullYear()} Delog &bull; Crafted with <span role="img" aria-label="love">❤️</span> by <a href="https://w3layouts.com">W3Layouts</a></p>
+      <main>
+        {children}
+      </main>
+      <footer className={style.site_footer}>
+        <small>&copy; {new Date().getFullYear()} Familienverein Wahlen &middot; Website von <a href="https://www.pixelstrol.ch">pixelstrol.ch</a></small>
       </footer>
     </div>
   )

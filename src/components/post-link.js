@@ -1,20 +1,20 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import * as style from './postLink.module.css' 
+
 const PostLink = ({ post }) => (
-  <article className="card ">
-    <Link to={post.frontmatter.path}>
-      {!!post.frontmatter.thumbnail && (
-        <img src={post.frontmatter.thumbnail} alt={post.frontmatter.title + "- Featured Shot"} />
-      )}
-    </Link>
+  <article className={style.card}>
+    {!!post.frontmatter.thumbnail && (
+      <Link to={post.frontmatter.path} className={style.thumbnailLink}>
+        <img src={post.frontmatter.thumbnail} alt={post.frontmatter.title} />
+      </Link>
+    )}
     <header>
-      <h2 className="post-title">
-        <Link to={post.frontmatter.path} className="post-link">
-          {post.frontmatter.title}
-        </Link>
-      </h2>
-      <div className="post-meta">{post.frontmatter.date}</div>
+      <Link to={post.frontmatter.path}>
+        <h2 className={style.title}>{post.frontmatter.title}</h2>
+      </Link>
+      <p className={style.meta}>{post.frontmatter.date}</p>
     </header>
   </article>
 )

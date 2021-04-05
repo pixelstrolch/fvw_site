@@ -1,0 +1,85 @@
+.card {
+  display: flex;
+  box-shadow: 0 10px 10px var(--color-gray-5);
+  flex-flow: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.card:nth-child(3n - 2) {
+  background-color: var(--color-one);
+}
+
+.card:nth-child(3n - 1) {
+  background-color: var(--color-two);
+}
+
+.card:nth-child(3n) {
+  background-color: var(--color-three);
+}
+
+.card > a img {
+  display: block;
+}
+
+.card > header {
+  padding: 24px;
+}
+  
+.card > h2:first-child {
+  margin: 0 0 0.5rem 0;
+}
+
+.title {
+  font-size: 1em;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.meta {
+  font-size: .75em;
+  text-decoration: none;
+}
+
+/* .card a:link {
+  color: var(--color-gray-9);
+} */
+
+.card:nth-child(3n - 2) a {
+  text-decoration-color: var(--color-three);
+}
+
+.card:nth-child(3n - 2) a:focus {
+  outline-color: var(--color-three);
+}
+
+.card:nth-child(3n - 1) a {
+  text-decoration-color: var(--color-one);
+}
+
+.card:nth-child(3n - 1) a:focus {
+  outline-color: var(--color-one);
+}
+
+.card:nth-child(3n) a {
+  text-decoration-color: var(--color-two);
+}
+
+.card:nth-child(3n) a:focus {
+  outline-color: var(--color-two);
+}
+
+.card a:hover,
+.card a:focus {
+  color: var(--color-gray-0);
+  text-decoration-color: var(--color-gray-0);
+}
+
+.card .thumbnailLink {
+  align-self: flex-start;
+}
+
+.card .thumbnailLink:focus {
+  outline-offset: 0;
+}

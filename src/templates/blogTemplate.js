@@ -1,60 +1,67 @@
 import React from "react"
-import Helmet from 'react-helmet';
+import Helmet from 'react-helmet'
 import { graphql } from "gatsby"
+import Img from "gatsby-image"
 import Layout from "../components/layout"
 
-export default function Template({
-  data, // this prop will be injected by the GraphQL query below.
-}) {
-  const { site, markdownRemark } = data // data.markdownRemark holds your post data
-  const { siteMetadata } = site
-  const { frontmatter, html } = markdownRemark
+import * as style from "./blogTemplate.module.css"
+
+const Article = ({ data }) => {
+  const post = data.markdownRemark
   return (
     <Layout>
       <Helmet>
-        <title>{frontmatter.title} | {siteMetadata.title}</title>
-        <meta name="description" content={frontmatter.metaDescription} />
+        <title>{post.frontmatter.title} | {post.frontmatter.title}</title>
+        <meta name="description" content={post.excerpt} />
       </Helmet>
-      <div className="blog-post-container">
-        <article className="post">
-          
-          {!frontmatter.thumbnail && (
-            <div className="post-thumbnail">
-              <h1 className="post-title">{frontmatter.title}</h1>
-              <div className="post-meta">{frontmatter.date}</div>
-            </div>
-          )}
-          {!!frontmatter.thumbnail && (
-            <div className="post-thumbnail" style={{backgroundImage: `url(${frontmatter.thumbnail})`}}>
-              <h1 className="post-title">{frontmatter.title}</h1>
-              <div className="post-meta">{frontmatter.date}</div>
-            </div>
-          )}
+        <article className={style.post}>
+          <header className={style.header}>
+            <h1 className={style.title}>{post.frontmatter.title}</h1>
+            <p className={style.meta}>
+              publiziert am&nbsp;
+              {new Date(post.frontmatter.date).toLocaleDateString("de-DE", {
+                month: "long",
+                day: "numeric",
+                year: "numeric",
+              })}{" "}
+            </p>
+
+            {!!post.frontmatter.thumbnail && (
+              <figure className={style.thumbnail}>
+                <Img
+                  fluid={post.frontmatter.thumbnail.childImageSharp.fluid}
+                  alt={post.frontmatter.title}
+                />
+              </figure>
+            )}
+          </header>
           <div
-            className="blog-post-content"
-            dangerouslySetInnerHTML={{ __html: html }}
+            className={style.content}
+            dangerouslySetInnerHTML={{ __html: post.html }}
           />
         </article>
-      </div>
     </Layout>
   )
 }
 
-export const pageQuery = graphql`
+export default Article;
+
+export const query = graphql`
   query($path: String!) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
+      excerpt
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        path
         title
-        thumbnail
-        metaDescription
+        path
+        date
+        thumbnail {
+          childImageSharp {
+            fluid(maxWidth: 1360) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

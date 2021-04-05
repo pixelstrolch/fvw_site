@@ -1,0 +1,30 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  font-weight: 300;
+}
+
+.navigation a {
+  background-color: var(--color-gray-2);
+  border-bottom: 2px solid transparent;
+  color: var(--color-one);
+  font-size: 1rem;
+  margin-left: 1rem;
+  padding: .5em 1em;
+  text-decoration: none;
+}
+
+.navigation a[aria-current] {
+  background-color: var(--color-one);
+  color: var(--color-gray-0);
+}
+
+.navigation a:hover {
+  background-color: var(--color-gray-2);
+  border-bottom-color: var(--color-one);
+  color: var(--color-one);
+}
+
+.navigation a:last-child {
+  margin-right: 0;
+}

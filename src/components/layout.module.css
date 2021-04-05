@@ -1,0 +1,17 @@
+.overallContainer {
+  display: flex;
+  flex-flow: column;
+  padding: 2rem;
+  margin: auto;
+  max-width: var(--content-w-wide);
+}
+
+.site_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site_footer {
+  margin-top: 6rem;
+}

@@ -3,6 +3,8 @@ import Helmet from "react-helmet"
 import { graphql } from 'gatsby'
 import Layout from "../components/layout"
 
+import * as style from "./contact.module.css"
+
 const ContactPage = ({
   data: {
     site
@@ -14,13 +16,13 @@ const ContactPage = ({
         <title>Contact — {site.siteMetadata.title}</title>
         <meta name="description" content={"Contact page of " + site.siteMetadata.description} />
       </Helmet>
-      <div className="two-grids -contact">
+      <div class="grid twoCol">
         <div className="post-thumbnail" style={{backgroundImage: `url('/assets/alexander-andrews-HgUDpaGPTEA-unsplash.jpg')`, marginBottom: 0}}>
           <h1 className="post-title">Get in Touch</h1>
           <p>Let me help you kick start your next project &rarr;</p>
         </div>
         <div>
-          <form className="form-container" action="https://sendmail.w3layouts.com/SubmitContactForm" method="post">
+          <form className={style.formContainer} action="https://sendmail.w3layouts.com/SubmitContactForm" method="post">
             <div>
               <label htmlFor="w3lName">Name</label>
               <input type="text" name="w3lName" id="w3lName"/>

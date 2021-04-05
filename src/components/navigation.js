@@ -1,11 +1,14 @@
 import React from "react"
 import {Link} from "gatsby"
-import ThemeChanger from "../components/themeChanger"
 
-export default (props) => (
-  <nav className="navigation"> 
-    <Link to="/contact">Contact</Link>
-    <ThemeChanger/>
+import * as style from './navigation.module.css' 
+
+const Navigation = () => (
+  <nav className={style.navigation}> 
+    <Link to="/#blog">Blog</Link>
+    <Link to="/contact">Kontakt</Link>
   </nav>
   
 )
+
+export default Navigation;
