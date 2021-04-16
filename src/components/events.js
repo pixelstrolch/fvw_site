@@ -7,20 +7,20 @@ const Events = ({ data }) => {
 
   return(
     <StaticQuery
-      query={graphql`
-        {
-          allGoogleSheet {
-            nodes {
-              Events {
-                id
-                wann
-                was
-                wo
-              }
-            }
-          }
-        }
-      `}
+      // query={graphql`
+      //   {
+      //     allGoogleSheet {
+      //       nodes {
+      //         Events {
+      //           id
+      //           wann
+      //           was
+      //           wo
+      //         }
+      //       }
+      //     }
+      //   }
+      // `}
       render={data => (
         <section className={style.events}>
           <h1 id="events">Events</h1>

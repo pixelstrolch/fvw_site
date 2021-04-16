@@ -33,15 +33,15 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: 'gatsby-source-google-spreadsheets',
-      options: {
-        spreadsheetId: '1p92aEK19ttxisfSZOux_qHJyPXyF04wybkYZdpLgEwA',
-        // apiKey: '109415772302064996163'
-        // Or
-        credentials: require('./spreadsheet-bd107c22a3e1.json')
-      }
-    },
+    // {
+    //   resolve: 'gatsby-source-google-spreadsheets',
+    //   options: {
+    //     spreadsheetId: '1p92aEK19ttxisfSZOux_qHJyPXyF04wybkYZdpLgEwA',
+    //     // apiKey: '109415772302064996163'
+    //     // Or
+    //     credentials: require('./spreadsheet-bd107c22a3e1.json')
+    //   }
+    // },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
