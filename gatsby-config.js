@@ -26,38 +26,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          // gatsby-remark-relative-images must go before gatsby-remark-images
-          {
-            resolve: `gatsby-remark-relative-images`,
-            options: {
-              // [Optional] The root of "media_folder" in your config.yml
-              // Defaults to "static"
-              staticFolderName: 'static',
-              // [Optional] Include the following fields, use dot notation for nested fields
-              // All fields are included by default
-              include: ['featured'],
-              // [Optional] Exclude the following fields, use dot notation for nested fields
-              // No fields are excluded by default
-              exclude: ['featured.skip'],
-            },
-          },
-          {
-            resolve: `gatsby-remark-images`,
-            options: { maxWidth: 1024 },
-          },
-          {
-            resolve: `gatsby-remark-emojis`
-          },
-          {
-            resolve: `gatsby-plugin-netlify-cms-paths`
-          }
-        ],
-      },
-    },
-    {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         typekit: {
@@ -86,9 +54,31 @@ module.exports = {
         icon: "static/uploads/icon.png",
       },
     },
-    `gatsby-plugin-react-helmet`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    `gatsby-plugin-image`,
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-relative-images',
+            options: {
+              name: 'uploads',
+            },
+          },
+          {
+            resolve: 'gatsby-remark-images',
+             options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 2048,
+            },
+          },
+        ],
+      },
+    },
     `gatsby-plugin-netlify-cms`,
     // siteURL is a must for sitemap generation
     `gatsby-plugin-sitemap`,
