@@ -1,17 +1,21 @@
 .overallContainer {
   display: flex;
   flex-flow: column;
-  padding: 2rem;
   margin: auto;
-  max-width: var(--content-w-wide);
+  min-height: 100vh;
 }
 
 .site_header {
+  align-items: center;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.site_main {
+  margin-bottom: 2rem;
 }
 
 .site_footer {
-  margin-top: 6rem;
+  margin: auto 2rem 1rem;
 }

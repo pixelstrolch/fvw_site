@@ -1,8 +1,16 @@
 .hero_header {
-  font-size: 1.25em;
-  margin-bottom: 4rem;
+  margin: 0 auto 4rem;
+  padding: 0 2rem;
+  max-width: var(--content-w-wide);
+}
+
+@media screen and (min-width: 80rem) {
+  .hero_header {
+    width: var(--content-w-wide);
+  }
 }
 
 .content {
+  font-size: 1.25em;
   margin-top: 1em;
 }

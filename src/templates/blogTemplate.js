@@ -1,67 +1,75 @@
 import React from "react"
 import Helmet from 'react-helmet'
 import { graphql } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 
 import * as style from "./blogTemplate.module.css"
 
-const Article = ({ data }) => {
-  const post = data.markdownRemark
+export default function Template({
+  data, // this prop will be injected by the GraphQL query below.
+}) {
+  const { site, markdownRemark } = data // data.markdownRemark holds your post data
+  const { siteMetadata } = site
+  const { frontmatter, html } = markdownRemark
+  const image = getImage(frontmatter.thumbnail)
   return (
     <Layout>
       <Helmet>
-        <title>{post.frontmatter.title} | {post.frontmatter.title}</title>
-        <meta name="description" content={post.excerpt} />
+        <title>{frontmatter.title} | {siteMetadata.title}</title>
+        <meta name="description" content={frontmatter.metaDescription} />
       </Helmet>
         <article className={style.post}>
           <header className={style.header}>
-            <h1 className={style.title}>{post.frontmatter.title}</h1>
+            <h1 className={style.title}>{frontmatter.title}</h1>
             <p className={style.meta}>
               publiziert am&nbsp;
-              {new Date(post.frontmatter.date).toLocaleDateString("de-DE", {
+              {new Date(frontmatter.date).toLocaleDateString("de-DE", {
                 month: "long",
                 day: "numeric",
                 year: "numeric",
               })}{" "}
             </p>
 
-            {!!post.frontmatter.thumbnail && (
+            {frontmatter.thumbnail && (
               <figure className={style.thumbnail}>
-                <Img
-                  fluid={post.frontmatter.thumbnail.childImageSharp.fluid}
-                  alt={post.frontmatter.title}
+                <GatsbyImage 
+                  image={image}
                 />
               </figure>
             )}
           </header>
           <div
             className={style.content}
-            dangerouslySetInnerHTML={{ __html: post.html }}
+            dangerouslySetInnerHTML={{ __html: html }}
           />
         </article>
     </Layout>
   )
 }
 
-export default Article;
-
-export const query = graphql`
+export const pageQuery = graphql`
   query($path: String!) {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
-      excerpt
       frontmatter {
-        title
-        path
         date
+        path
+        title
         thumbnail {
-          childImageSharp {
-            fluid(maxWidth: 1360) {
-              ...GatsbyImageSharpFluid
-            }
+          childImageSharp { 
+            gatsbyImageData(
+              placeholder: BLURRED
+              layout: FULL_WIDTH
+            ) 
           }
         }
+        metaDescription
       }
     }
   }

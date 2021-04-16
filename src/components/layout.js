@@ -26,7 +26,6 @@ export default function Layout({ children }) {
       <header className={style.site_header}>
         <Link to="/">
           <img
-            class="logo"
             src="/uploads/Logo-FamilienvereinWahlen.svg"
             width="375"
             height="75"
@@ -35,7 +34,7 @@ export default function Layout({ children }) {
         </Link>
         <Navigation />
       </header>
-      <main>
+      <main className={style.site_main}>
         {children}
       </main>
       <footer className={style.site_footer}>

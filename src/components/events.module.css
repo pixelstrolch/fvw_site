@@ -1,0 +1,11 @@
+.events {
+  margin: 0 auto 4rem;
+  padding: 0 2rem;
+  max-width: var(--content-w-wide);
+}
+
+@media screen and (min-width: 60rem) {
+  .events {
+    width: var(--content-w-wide);
+  }
+}

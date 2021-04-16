@@ -1,10 +1,13 @@
 import React from "react"
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby'
+
 import Layout from "../components/layout"
-import PostLink from "../components/post-link"
+import PostLink from "../components/postLink"
 import HeroHeader from "../components/heroHeader"
 import Events from "../components/events"
+
+import * as style from "./index.module.css"
 
 const IndexPage = ({
   data: {
@@ -25,15 +28,18 @@ const IndexPage = ({
       </Helmet>
       <HeroHeader/>
       <Events/>
-      <h1 id="blog">Was bisher geschah</h1>
-      <div class="grid threeCol">
-        {Posts}
-      </div>
+      <section className={style.blog}>
+        <h1 id="beitraege">Was bisher geschah</h1>
+        <div className={style.grid}>
+          {Posts}
+        </div>
+      </section>
     </Layout>
   )
 }
 
 export default IndexPage
+
 export const pageQuery = graphql`
   query indexPageQuery {
     site {
@@ -48,14 +54,14 @@ export const pageQuery = graphql`
           id
           excerpt(pruneLength: 250)
           frontmatter {
-            date(formatString: "DD. MMMM YYYY")
+            date
             path
             title
             thumbnail {
               childImageSharp {
-                fluid(maxWidth: 1360) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(
+                  placeholder: BLURRED
+                )
               }
             }
           }

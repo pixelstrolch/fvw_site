@@ -5,7 +5,8 @@ import * as style from './navigation.module.css'
 
 const Navigation = () => (
   <nav className={style.navigation}> 
-    <Link to="/#blog">Blog</Link>
+    <Link to="/#events">Events</Link>
+    <Link to="/#beitraege">Beiträge</Link>
     <Link to="/contact">Kontakt</Link>
   </nav>
   

@@ -1,6 +1,8 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 
+import * as style from './events.module.css' 
+
 const Events = ({ data }) => {
 
   return(
@@ -20,8 +22,8 @@ const Events = ({ data }) => {
         }
       `}
       render={data => (
-        <>
-          <h1>Events</h1>
+        <section className={style.events}>
+          <h1 id="events">Events</h1>
           <table>
             <tr>
               <th>Was</th>
@@ -34,7 +36,7 @@ const Events = ({ data }) => {
               <td>{data.allGoogleSheet.nodes.Events.wo}</td>
             </tr> */}
           </table>
-        </>
+        </section>
       )}
     />
   )
