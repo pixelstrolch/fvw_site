@@ -6,9 +6,11 @@ backend:
 media_folder: static/uploads
 public_folder: /uploads
 
+locale: "de"
+
 collections:
   - name: settings
-    label: Einstellungen
+    label: Seiteneinstellungen
     files:
       - name: config
         label: Allgemein
@@ -27,30 +29,29 @@ collections:
             label: Beschreibung
             default: ""
             required: false
-          - widget: object
-            name: home
-            label: Startseiten Optionen
-            fields:
-              - widget: string
-                name: title
-                label: Titel
-                default: ""
-                required: false
-              - widget: markdown
-                name: description
-                label: Beschreibung
-                default: ""
-                required: false
-              - widget: image
-                name: homeImg
-                label: Grosses Startseitenbild
-                hint: "Empfohlene Auflösung: 1280x800"
-                required: false
-                media_library:
-                  config:
-                    multiple: false
+      - name: home
+        label: Startseite
+        file: homepage-data.json
+        fields:
+          - widget: string
+            name: title
+            label: Titel
+            default: ""
+            required: false
+          - widget: markdown
+            name: description
+            label: Beschreibung
+            default: ""
+            required: false
+          - widget: image
+            label: heroImage
+            name: Startseitenbild
+            required: false
+            media_library:
+              config:
+                multiple: false
   - name: blog
-    label: Blog
+    label: Beiträge
     folder: content/blog
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     create: true
@@ -59,18 +60,20 @@ collections:
       - name: path
         label: Path
         widget: string
-        pattern: [/]
-        hint: "Path must start with /"
+        pattern:
+          [
+            "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+            "Darf keine Leerzeichen oder Sonderzeichen und Umlaute enthalten.",
+          ]
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
       - label: Meta Description
         name: metaDescription
         widget: text
         required: false
-      - label: Featured Image
+      - label: Beitragsbild
         name: thumbnail
         widget: image
-        hint: "Image size 1280x800 works best :)"
         required: false
         media_library:
           config:
