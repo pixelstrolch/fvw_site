@@ -1,11 +1,13 @@
-.blog {
+.blog,
+.events {
   margin: 0 auto 4rem;
   padding: 0 2rem;
-  max-width: var(--content-w-wide);
+  max-width: 100%;
 }
 
-@media screen and (min-width: 60rem) {
-  .blog {
+@media screen and (min-width: 80rem) {
+  .blog,
+  .events {
     width: var(--content-w-wide);
   }
 }

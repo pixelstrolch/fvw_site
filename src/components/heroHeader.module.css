@@ -1,16 +1,35 @@
-.hero_header {
-  margin: 0 auto 4rem;
-  padding: 0 2rem;
+.heroHeader {
+  margin-bottom: 4rem;
+}
+
+.title,
+.content,
+.linkContainer {
+  margin-left: auto;
+  margin-right: auto;
   max-width: var(--content-w-wide);
+  padding: 0 2rem;
 }
 
 @media screen and (min-width: 80rem) {
-  .hero_header {
+  .title,
+  .content,
+  .linkContainer {
     width: var(--content-w-wide);
   }
 }
 
-.content {
+.content,
+.linkContainer {
   font-size: 1.25em;
   margin-top: 1em;
+}
+
+.image {
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.image > div {
+  height: 56.25vw;
 }

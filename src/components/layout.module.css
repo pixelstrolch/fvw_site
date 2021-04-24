@@ -1,4 +1,4 @@
-.overallContainer {
+.site {
   display: flex;
   flex-flow: column;
   margin: auto;
@@ -8,14 +8,35 @@
 .site_header {
   align-items: center;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  padding: 1rem 2rem;
+  margin: 1rem 2rem 6rem;
 }
 
+@media screen and (min-width: 60rem) {
+  .site_header {
+    flex-direction: row;
+    margin: 1rem 2rem 8rem;
+  }
+}
 .site_main {
   margin-bottom: 2rem;
 }
 
 .site_footer {
+  font-size: 1rem;
   margin: auto 2rem 1rem;
+}
+
+.site_footer a {
+  text-decoration-thickness: 1px;
+}
+
+.site_footer small {
+  margin-top: 6rem;
+}
+
+.site_footer .dot {
+  color: var(--color-one);
+  padding: 0 0.25em;
 }
