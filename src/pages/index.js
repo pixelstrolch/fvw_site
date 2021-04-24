@@ -5,7 +5,7 @@ import { graphql } from 'gatsby'
 import Layout from "../components/layout"
 import PostLink from "../components/postLink"
 import HeroHeader from "../components/heroHeader"
-import Events from "../components/events"
+import EventRow from "../components/events"
 
 import * as style from "./index.module.css"
 
@@ -13,12 +13,16 @@ const IndexPage = ({
   data: {
     site,
     allMarkdownRemark: { edges },
+    allGoogleEventsSheet: { nodes }
   },
 }) => {
 
   const Posts = edges
     .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
     .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
+  
+  const EventRows = nodes
+    .map(row => <EventRow key={row.id} event={row} />)
 
   return (
     <Layout>
@@ -27,9 +31,19 @@ const IndexPage = ({
         <meta name="description" content={site.siteMetadata.description} />
       </Helmet>
       <HeroHeader/>
-      <Events/>
+      <section className={style.events}>
+        <h1 id="events">Events <span role="img">🎉</span></h1>
+        <table>
+          <tr>
+            <th>Was</th>
+            <th>Wann</th>
+            <th>Wo</th>
+          </tr>
+          {EventRows}
+        </table>
+      </section>
       <section className={style.blog}>
-        <h1 id="beitraege">Was bisher geschah</h1>
+        <h1 id="beitraege">Beiträge</h1>
         <div className={style.grid}>
           {Posts}
         </div>
@@ -66,6 +80,14 @@ export const pageQuery = graphql`
             }
           }
         }
+      }
+    }
+    allGoogleEventsSheet {
+      nodes {
+        id
+        wann
+        was
+        wo
       }
     }
   }
