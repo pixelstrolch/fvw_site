@@ -31,25 +31,18 @@ collections:
             required: false
       - name: home
         label: Startseite
-        file: homepage-data.json
+        file: content/homepage-data.json
         fields:
           - widget: string
             name: title
             label: Titel
             default: ""
-            required: false
+            required: true
           - widget: markdown
             name: description
             label: Beschreibung
             default: ""
-            required: false
-          - widget: image
-            label: heroImage
-            name: Startseitenbild
-            required: false
-            media_library:
-              config:
-                multiple: false
+            required: true
   - name: blog
     label: Beiträge
     folder: content/blog
