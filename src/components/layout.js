@@ -22,8 +22,11 @@ export default function Layout({ children }) {
     `
   )
   return (
-    <div className={style.overallContainer}>
-      <header className={style.site_header}>
+    <div className={style.site}>
+      <a className="skip-link screen-reader-text" href="#primary">
+        Zum Inhalt springen
+      </a>
+      <header className={style.site_header} role="banner">
         <Link to="/">
           <img
             src="/uploads/Logo-FamilienvereinWahlen.svg"
@@ -34,11 +37,11 @@ export default function Layout({ children }) {
         </Link>
         <Navigation />
       </header>
-      <main className={style.site_main}>
+      <main id="primary" className={style.site_main}>
         {children}
       </main>
       <footer className={style.site_footer}>
-        <small>&copy; {new Date().getFullYear()} Familienverein Wahlen &middot; Website von <a href="https://www.pixelstrol.ch">pixelstrol.ch</a></small>
+        <small>&copy; {new Date().getFullYear()} Familienverein Wahlen <span className={style.dot}>&middot;</span> Website realisiert mit Gatsby und Netlify (CMS) von <a href="https://www.pixelstrol.ch">pixelstrol.ch</a></small>
       </footer>
     </div>
   )
