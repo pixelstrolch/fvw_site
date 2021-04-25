@@ -10,13 +10,13 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 1rem 2rem 6rem;
+  margin: 1rem 2rem 4rem;
 }
 
 @media screen and (min-width: 60rem) {
   .site_header {
     flex-direction: row;
-    margin: 1rem 2rem 8rem;
+    margin: 1rem 2rem 6rem;
   }
 }
 .site_main {
@@ -25,15 +25,12 @@
 
 .site_footer {
   font-size: 1rem;
+  line-height: 1.2;
   margin: auto 2rem 1rem;
 }
 
 .site_footer a {
   text-decoration-thickness: 1px;
-}
-
-.site_footer small {
-  margin-top: 6rem;
 }
 
 .site_footer .dot {
