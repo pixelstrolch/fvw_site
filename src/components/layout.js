@@ -41,7 +41,7 @@ export default function Layout({ children }) {
         {children}
       </main>
       <footer className={style.site_footer}>
-        <small>&copy; {new Date().getFullYear()} Familienverein Wahlen <span className={style.dot}>&middot;</span> Website realisiert mit Gatsby und Netlify (CMS) von <a href="https://www.pixelstrol.ch">pixelstrol.ch</a></small>
+        <small>&copy; {new Date().getFullYear()} Familienverein Wahlen <span className={style.dot}>&middot;</span> Website realisiert mit <a href="https://www.gatsbyjs.com/">Gatsby</a> und <a href="https://www.netlify.com/">Netlify</a> (<a href="https://www.netlifycms.org/">CMS</a>) von <a href="https://www.pixelstrol.ch">pixelstrol.ch</a></small>
       </footer>
     </div>
   )
