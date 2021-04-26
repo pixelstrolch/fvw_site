@@ -32,7 +32,7 @@ const IndexPage = ({
       </Helmet>
       <HeroHeader/>
       <section className={style.events}>
-        <h1 id="events">Events <span role="img">🎉</span></h1>
+        <h1 id="events">Events <span role="img" aria-labelledby="Emoji Konfettikanone">🎉</span></h1>
         <table>
           <tr>
             <th>Was</th>
