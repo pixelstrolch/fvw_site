@@ -1,13 +1,12 @@
-import React from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
-import Navigation from "../components/navigation"
+import React from "react";
+import { Link, useStaticQuery, graphql } from "gatsby";
+import Navigation from "../components/navigation";
 
-import "../styles/reset.css"
-import "../styles/accessibility.css"
-import "../styles/global.module.css"
-import "../styles/general.css"
-import * as style from './layout.module.css' 
-
+import "../styles/reset.css";
+import "../styles/accessibility.css";
+import "../styles/global.module.css";
+import "../styles/general.css";
+import * as style from "./layout.module.css";
 
 export default function Layout({ children }) {
   const data = useStaticQuery(
@@ -20,7 +19,7 @@ export default function Layout({ children }) {
         }
       }
     `
-  )
+  );
   return (
     <div className={style.site}>
       <a className="skip-link screen-reader-text" href="#primary">
@@ -41,8 +40,17 @@ export default function Layout({ children }) {
         {children}
       </main>
       <footer className={style.site_footer}>
-        <small>&copy; {new Date().getFullYear()} Familienverein Wahlen <span className={style.dot}>&middot;</span> Website realisiert mit <a href="https://www.gatsbyjs.com/">Gatsby</a> und <a href="https://www.netlify.com/">Netlify</a> (<a href="https://www.netlifycms.org/">CMS</a>) von <a href="https://www.pixelstrol.ch">pixelstrol.ch</a></small>
+        <small>
+          &copy; {new Date().getFullYear()} Familienverein Wahlen{" "}
+          <span className={style.dot}>&middot;</span>{" "}
+          <Link to="/datenschutz">Datenschutz</Link>{" "}
+          <span className={style.dot}>&middot;</span> Website realisiert mit{" "}
+          <a href="https://www.gatsbyjs.com/">Gatsby</a> und{" "}
+          <a href="https://www.netlify.com/">Netlify</a> (
+          <a href="https://www.netlifycms.org/">CMS</a>) von{" "}
+          <a href="https://www.pixelstrol.ch">pixelstrol.ch</a>
+        </small>
       </footer>
     </div>
-  )
+  );
 }

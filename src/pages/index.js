@@ -1,38 +1,41 @@
-import React from "react"
-import Helmet from 'react-helmet';
-import { graphql } from 'gatsby'
+import React from "react";
+import { graphql } from "gatsby";
 
-import Layout from "../components/layout"
-import PostLink from "../components/postLink"
-import HeroHeader from "../components/heroHeader"
-import EventRow from "../components/events"
+import Seo from "../components/seo";
+import Layout from "../components/layout";
+import PostLink from "../components/postLink";
+import HeroHeader from "../components/heroHeader";
+import EventRow from "../components/events";
 
-import * as style from "./index.module.css"
+import * as style from "./index.module.css";
 
 const IndexPage = ({
   data: {
     site,
     allMarkdownRemark: { edges },
-    allGoogleEventsSheet: { nodes }
+    allGoogleEventsSheet: { nodes },
   },
 }) => {
-
   const Posts = edges
-    .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
-    .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
-  
-  const EventRows = nodes
-    .map(row => <EventRow key={row.id} event={row} />)
+    .filter((edge) => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
+    .map((edge) => <PostLink key={edge.node.id} post={edge.node} />);
+
+  const EventRows = nodes.map((row) => <EventRow key={row.id} event={row} />);
 
   return (
     <Layout>
-      <Helmet>
-        <title>{site.siteMetadata.title}</title>
-        <meta name="description" content={site.siteMetadata.description} />
-      </Helmet>
-      <HeroHeader/>
+      <Seo
+        title={site.siteMetadata.title}
+        description={site.siteMetadata.description}
+      />
+      <HeroHeader />
       <section className={style.events}>
-        <h1 id="events">Events <span role="img" aria-labelledby="Emoji Konfettikanone">🎉</span></h1>
+        <h1 id="events">
+          Events{" "}
+          <span role="img" aria-labelledby="Emoji Konfettikanone">
+            🎉
+          </span>
+        </h1>
         <table>
           <tr>
             <th>Was</th>
@@ -44,15 +47,13 @@ const IndexPage = ({
       </section>
       <section className={style.blog}>
         <h1 id="beitraege">Beiträge</h1>
-        <div className={style.grid}>
-          {Posts}
-        </div>
+        <div className={style.grid}>{Posts}</div>
       </section>
     </Layout>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;
 
 export const pageQuery = graphql`
   query indexPageQuery {
@@ -73,9 +74,7 @@ export const pageQuery = graphql`
             title
             thumbnail {
               childImageSharp {
-                gatsbyImageData(
-                  placeholder: BLURRED
-                )
+                gatsbyImageData(placeholder: BLURRED)
               }
             }
           }
@@ -91,4 +90,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
