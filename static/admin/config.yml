@@ -31,14 +31,14 @@ collections:
         label: Startseite
         file: content/homepage-data.json
         fields:
-          - widget: string
-            name: title
+          - name: title
             label: Titel
+            widget: string
             default: ""
             required: true
-          - widget: markdown
-            name: description
+          - name: description
             label: Beschreibung
+            widget: markdown
             default: ""
             required: true
   - name: blog
@@ -47,26 +47,36 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     create: true
     fields:
-      - { label: Template, name: template, widget: hidden, default: BlogPost }
+      - name: template
+        label: Template
+        widget: hidden
+        default: BlogPost
       - name: path
-        label: Path
+        label: Pfad
         widget: string
-        pattern:
-          [
-            "^[a-z0-9]+(?:-[a-z0-9]+)*$",
-            "Darf keine Leerzeichen oder Sonderzeichen und Umlaute enthalten.",
-          ]
-      - { name: date, label: Date, widget: datetime }
-      - { name: title, label: Title }
-      - label: Meta Description
-        name: metaDescription
+      - name: date
+        label: Datum
+        widget: datetime
+      - name: title
+        label: Titel
+      - name: metaDescription
+        label: Beschreibung (Suchmaschinenoptimierung)
         widget: text
         required: false
-      - label: Beitragsbild
-        name: thumbnail
-        widget: image
+      - name: featuredImage
+        label: Beitragsbild
         required: false
-        media_library:
-          config:
-            multiple: false
-      - { name: body, label: Body, widget: markdown }
+        widget: object
+        fields:
+          - name: thumbnail
+            label: Beitragsbild
+            widget: image
+            media_library:
+              config:
+                multiple: false
+          - name: alt
+            label: Alt text (Was ist auf dem Bild zu sehen in ein, zwei Sätzen?)
+            widget: string
+      - name: body
+        label: Body
+        widget: markdown

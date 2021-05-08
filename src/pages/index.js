@@ -72,10 +72,13 @@ export const pageQuery = graphql`
             date
             path
             title
-            thumbnail {
-              childImageSharp {
-                gatsbyImageData(placeholder: BLURRED)
+            featuredImage {
+              thumbnail {
+                childImageSharp {
+                  gatsbyImageData(placeholder: BLURRED)
+                }
               }
+              alt
             }
           }
         }

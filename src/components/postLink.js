@@ -1,17 +1,17 @@
-import React from "react"
-import { Link } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import React from "react";
+import { Link } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-import * as style from './postLink.module.css' 
+import * as style from "./postLink.module.css";
 
 const Posts = ({ post }) => (
   <article className={style.card}>
-    {!!post.frontmatter.thumbnail && (
+    {post.frontmatter.featuredImage.thumbnail && (
       <Link to={post.frontmatter.path} className={style.thumbnailLink}>
-        <GatsbyImage 
-          image={getImage(post.frontmatter.thumbnail)}
-          aspectRatio={16/9} 
-          alt={post.frontmatter.title} 
+        <GatsbyImage
+          image={getImage(post.frontmatter.featuredImage.thumbnail)}
+          aspectRatio={16 / 9}
+          alt={post.frontmatter.title}
         />
       </Link>
     )}
@@ -28,6 +28,6 @@ const Posts = ({ post }) => (
       </p>
     </header>
   </article>
-)
+);
 
-export default Posts
+export default Posts;
