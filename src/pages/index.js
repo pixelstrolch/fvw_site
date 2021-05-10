@@ -37,12 +37,14 @@ const IndexPage = ({
           </span>
         </h1>
         <table>
-          <tr>
-            <th>Was</th>
-            <th>Wann</th>
-            <th>Wo</th>
-          </tr>
-          {EventRows}
+          <thead>
+            <tr>
+              <th>Was</th>
+              <th>Wann</th>
+              <th>Wo</th>
+            </tr>
+          </thead>
+          <tbody>{EventRows}</tbody>
         </table>
       </section>
       <section className={style.blog}>
@@ -72,10 +74,13 @@ export const pageQuery = graphql`
             date
             path
             title
-            thumbnail {
-              childImageSharp {
-                gatsbyImageData(placeholder: BLURRED)
+            featuredImage {
+              thumbnail {
+                childImageSharp {
+                  gatsbyImageData(placeholder: BLURRED)
+                }
               }
+              alt
             }
           }
         }
