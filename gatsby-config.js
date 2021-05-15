@@ -67,7 +67,7 @@ module.exports = {
         background_color: `#fff`,
         theme_color: `#eb5a32`,
         display: `standalone`,
-        icon: `static/uploads/icon.png`,
+        icon: `static/uploads/icon.svg`,
       },
     },
     `gatsby-plugin-mdx`,
