@@ -46,8 +46,7 @@ export default function Layout({ children }) {
           <Link to="/datenschutz">Datenschutz</Link>{" "}
           <span className={style.dot}>&middot;</span> Website realisiert mit{" "}
           <a href="https://www.gatsbyjs.com/">Gatsby</a> und{" "}
-          <a href="https://www.netlify.com/">Netlify</a> (
-          <a href="https://www.netlifycms.org/">CMS</a>) von{" "}
+          <a href="https://www.netlify.com/">Netlify</a> von{" "}
           <a href="https://www.pixelstrol.ch">pixelstrol.ch</a>
         </small>
       </footer>

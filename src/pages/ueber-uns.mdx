@@ -24,3 +24,105 @@ Die Mitgliedschaft pro Familie kostet CHF 20.– und wird für dieses ohnehin sc
 Über unsere Anlässe informieren wir Euch gerne über unsere Homepage … oder dem Infoblatt.
 
 Wir freuen uns sehr auf Alle, die mit uns im Dorf unterwegs sein möchten!
+
+<div class="formContainer">
+  <form id="anmeldung" name="anmeldung" method="POST" data-netlify="true">
+    <h2 id="anmeldung" class="formElement4-4 color-one">
+      Mitglied werden
+    </h2>
+    <div class="formElement4-4">
+      <div class="control">
+        <input id="familie" name="anrede" type="radio" />
+        <label for="familie">Familie</label>
+      </div>
+      <div class="control">
+        <input id="frau" name="anrede" type="radio" />
+        <label for="frau">Frau</label>
+      </div>
+      <div class="control">
+        <input id="herr" name="anrede" type="radio" />
+        <label for="herr">Herr</label>
+      </div>
+    </div>
+    <div class="formElement2-4">
+      <label for="name">Familienname</label>
+      <input id="name" type="text" />
+    </div>
+    <div class="formElement2-4">
+      <label for="vorname">Vorname</label>
+      <input id="vorname" type="text" />
+    </div>
+    <div class="formElement4-4">
+      <label for="strasse">Strasse</label>
+      <input id="strasse" type="text" />
+    </div>
+    <div class="formElement1-4">
+      <label for="plz">PLZ</label>
+      <input id="plz" type="text" pattern="[0-9]*" />
+    </div>
+    <div class="formElement3-4">
+      <label for="ort">Ort</label>
+      <input name="ort" type="text" />
+    </div>
+    <div class="formElement2-4">
+      <label for="telefon">Telefon</label>
+      <input name="telefon" type="tel" />
+    </div>
+    <div class="formElement2-4">
+      <label for="mail">E-Mail</label>
+      <input name="mail" type="email" />
+    </div>
+    <fieldset class="kind">
+      <legend>Kind 1</legend>
+      <div class="formElement2-4">
+        <label for="nameKind1">Vorname</label>
+        <input name="nameKind1" type="text" />
+      </div>
+      <div class="formElement2-4">
+        <label for="gebKind1">Geburtsdatum</label>
+        <input name="gebKind1" type="date" />
+      </div>
+    </fieldset>
+    <fieldset class="kind">
+      <legend>Kind 2</legend>
+      <div class="formElement2-4">
+        <label for="nameKind2">Vorname</label>
+        <input name="nameKind2" type="text" />
+      </div>
+      <div class="formElement2-4">
+        <label for="gebKind2">Geburtsdatum</label>
+        <input name="gebKind2" type="date" />
+      </div>
+    </fieldset>
+    <fieldset class="kind">
+      <legend>Kind 3</legend>
+      <div class="formElement2-4">
+        <label for="nameKind3">Vorname</label>
+        <input name="nameKind3" type="text" />
+      </div>
+      <div class="formElement2-4">
+        <label for="gebKind3">Geburtsdatum</label>
+        <input name="gebKind3" type="date" />
+      </div>
+    </fieldset>
+    <fieldset class="kind">
+      <legend>Kind 4</legend>
+      <div class="formElement2-4">
+        <label for="nameKind4">Vorname</label>
+        <input name="nameKind4" type="text" />
+      </div>
+      <div class="formElement2-4">
+        <label for="gebKind4">Geburtsdatum</label>
+        <input name="gebKind4" type="date" />
+      </div>
+    </fieldset>
+      <div class="formElement4-4">
+        <label for="bemerkungen">Bemerkungen </label>
+        <textarea id="bemerkungen"></textarea>
+      </div>
+    <div class="formElement4-4">
+      <button type="submit">Senden</button>
+    </div>
+
+  </form>
+</div>

@@ -48,6 +48,18 @@ body {
   }
 }
 
+.color-one {
+  color: var(--color-one);
+}
+
+.color-two {
+  color: var(--color-two);
+}
+
+.color-three {
+  color: var(--color-three);
+}
+
 /* Paragraph */
 
 p {
@@ -144,6 +156,113 @@ th {
 
 td {
   border-bottom: 1px solid var(--color-gray-5);
+}
+
+/* Forms */
+
+.formContainer {
+  background-color: var(--color-gray-2);
+  margin-top: 4rem;
+  padding: 2rem;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0.5rem;
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+.formElement1-4,
+.formElement2-4,
+.formElement3-4,
+.formElement4-4 {
+  margin-top: 0;
+  grid-column: span 4;
+}
+
+input,
+textarea {
+  border: 1px solid var(--color-gray-6);
+  border-radius: 6px;
+  box-shadow: 0 0.5rem 1rem var(--color-gray-0);
+  padding: 0 0.25em;
+  width: 100%;
+}
+
+input:focus,
+textarea:focus {
+  border-color: transparent;
+  outline-offset: 0;
+}
+
+input[type="radio"] {
+  width: auto;
+}
+
+select {
+  padding-right: 0.5em;
+}
+
+label {
+  margin-bottom: 0.25rem;
+}
+
+button {
+  background-color: var(--color-one);
+  border-color: transparent;
+  border-radius: 4px;
+  box-shadow: 0 0.5rem 1rem var(--color-gray-0);
+  color: var(--color-gray-0);
+  cursor: pointer;
+  padding: 0.25em 0.5em;
+}
+
+.control {
+  display: inline-block;
+  margin-right: 1em;
+}
+
+.kind {
+  grid-column: span 4;
+}
+
+@media screen and (max-width: 50rem) {
+  label {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 50rem) {
+  form {
+    gap: 1rem;
+  }
+
+  input,
+  textarea {
+    padding: 0.25em 0.5em;
+  }
+
+  .formElement1-4 {
+    grid-column: span 1;
+  }
+
+  .formElement2-4 {
+    grid-column: span 2;
+  }
+
+  .formElement3-4 {
+    grid-column: span 3;
+  }
+
+  .formElement4-4 {
+    grid-column: span 4;
+  }
+
+  .kind {
+    grid-column: span 2;
+  }
 }
 
 /* Media */
