@@ -278,14 +278,6 @@ button:active {
 
 /* https://codyhouse.co/blog/post/custom-accessible-radio-checkbox-buttons-vertical-alignment */
 
-:root {
-  --checkbox-radio-size: 1em;
-  --checkbox-radio-line-height: 1;
-  --radio-marker-size: 0.5em;
-  --checkbox-marker-size: 12px;
-  --checkbox-radius: 4px;
-}
-
 input[type="radio"],
 input[type="checkbox"] {
   position: absolute;
@@ -301,7 +293,7 @@ input[type="radio"] + label,
 input[type="checkbox"] + label {
   display: inline-flex;
   align-items: center;
-  line-height: var(--checkbox-radio-line-height);
+  line-height: 1;
   user-select: none;
   cursor: pointer;
 }
@@ -311,15 +303,12 @@ input[type="checkbox"] + label::before {
   content: "";
   display: inline-block;
   position: relative;
-  top: calc(
-    (1em * var(--checkbox-radio-line-height) - var(--checkbox-radio-size)) / 2
-  );
   flex-shrink: 0;
-  width: var(--checkbox-radio-size);
-  height: var(--checkbox-radio-size);
-  background-color: var(--color-bg);
+  width: 1em;
+  height: 1em;
+  background-color: var(--color-gray-0);
   border-width: 1px;
-  border-color: var(--color-contrast-low);
+  border-color: var(--color-gray-6);
   border-style: solid;
   background-repeat: no-repeat;
   background-position: center;
@@ -329,11 +318,7 @@ input[type="checkbox"] + label::before {
 
 input[type="radio"]:not(:checked):not(:focus) + label:hover::before,
 input[type="checkbox"]:not(:checked):not(:focus) + label:hover::before {
-  border-color: hsl(
-    var(--color-contrast-low-h),
-    var(--color-contrast-low-s),
-    calc(var(--color-contrast-low-l) * 0.7)
-  );
+  border-color: var(--color-one);
 }
 
 input[type="radio"] + label::before {
@@ -341,7 +326,7 @@ input[type="radio"] + label::before {
 }
 
 input[type="checkbox"] + label::before {
-  border-radius: var(--checkbox-radius);
+  border-radius: 4px;
 }
 
 input[type="radio"]:checked + label::before,
@@ -366,12 +351,12 @@ input[type="checkbox"]:checked:active + label::before {
 
 input[type="radio"]:checked + label::before {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg class='nc-icon-wrapper' fill='%23ffffff'%3E%3Ccircle cx='8' cy='8' r='8' fill='%23ffffff'%3E%3C/circle%3E%3C/g%3E%3C/svg%3E");
-  background-size: var(--radio-marker-size);
+  background-size: 0.5em;
 }
 
 input[type="checkbox"]:checked + label::before {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpolyline points='1 6.5 4 9.5 11 2.5' fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/%3E%3C/svg%3E");
-  background-size: var(--checkbox-marker-size);
+  background-size: 12px;
 }
 
 input[type="radio"]:checked:active + label::before,
