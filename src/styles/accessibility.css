@@ -7,7 +7,7 @@
  * Re: word-wrap: Many screen reader and browser combinations announce broken
  * words as they would appear visually.
  */
- .screen-reader-text {
+.screen-reader-text {
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute !important;
   height: 1px;

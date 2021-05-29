@@ -13,12 +13,12 @@ const heroHeader = () => (
       dangerouslySetInnerHTML={{ __html: JSONData.description}}
     />
     <p className={style.linkContainer}>
-      <Link to="/ueber-uns">Mehr über unseren Verein erfahren</Link>
+      <Link to="/ueber-uns">Mehr über unseren Verein erfahren</Link> → <Link to="/ueber-uns#mitglied-werden" class="outline">Mitglied werden</Link>
     </p>
     <figure className={style.image}>
       <StaticImage 
-        src="../../static/uploads/anna-samoylova-w55spmmopge-unsplash.jpg"
-        alt="Kinder spielen Seilziehen."
+        src="../../static/uploads/ausflug-bauernhof.jpg"
+        alt="Kinder auf dem Bauernhof."
       />
     </figure>
   </section>
