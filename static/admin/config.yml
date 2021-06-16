@@ -1,7 +1,5 @@
 backend:
   name: git-gateway
-  repo: pixelstrolch/fvw_site
-  branch: main
 
 media_folder: static/uploads
 public_folder: /uploads
