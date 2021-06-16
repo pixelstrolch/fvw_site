@@ -1,0 +1,14 @@
+.newsletter {
+  background-color: var(--color-gray-2);
+  margin-top: 2rem;
+  padding: 2rem;
+}
+
+.invisible {
+  display: none;
+}
+
+.hidden {
+  position: absolute;
+  left: -5000px;
+}

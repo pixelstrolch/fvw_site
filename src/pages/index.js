@@ -6,6 +6,7 @@ import Layout from "../components/layout";
 import PostLink from "../components/postLink";
 import HeroHeader from "../components/heroHeader";
 import EventRow from "../components/events";
+import Newsletter from "../components/newsletter";
 
 import * as style from "./index.module.css";
 
@@ -46,6 +47,11 @@ const IndexPage = ({
           </thead>
           <tbody>{EventRows}</tbody>
         </table>
+      </section>
+      <section className={style.newsletter}>
+      <h1 id="newsletter">Sollen wir dich auf dem Laufenden halten?</h1>
+      <p>Mit diesem Formular meldest du dich für unseren Newsletter an. Wir verwenden dafür den Service Mailchimp. Du kannst dich jederzeit wieder vom Newsletter abmelden.</p>
+        <Newsletter />
       </section>
       <section className={style.blog}>
         <h1 id="beitraege">Beiträge</h1>
