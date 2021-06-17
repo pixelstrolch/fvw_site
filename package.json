@@ -10,6 +10,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
+    "@pixelstrolch/prettier-config": "^1.0.0",
     "gatsby": "^3.5.0",
     "gatsby-plugin-feed": "^3.5.0",
     "gatsby-plugin-image": "^1.5.0",
@@ -47,7 +48,7 @@
     "url": "git+https://github.com/pixelstrolch/fvw_site.git"
   },
   "scripts": {
-    "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
+    "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
