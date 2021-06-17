@@ -1,4 +1,5 @@
 backend:
+  name: github
   repo: pixelstrolch/fvw_site
   branch: main
 
