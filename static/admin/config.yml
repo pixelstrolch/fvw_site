@@ -62,9 +62,8 @@ collections:
       - name: title
         label: Titel
       - name: metaDescription
-        label: Beschreibung (Suchmaschinenoptimierung)
+        label: Beschreibe diesen Beitrag in ein bis zwei Sätzen (Suchmaschinenoptimierung)
         widget: text
-        required: false
       - name: featuredImage
         label: Beitragsbild
         required: false
