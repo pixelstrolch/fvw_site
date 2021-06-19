@@ -2,6 +2,18 @@
   margin-bottom: 4rem;
 }
 
+@media screen and (min-width: 60rem) {
+  .heroHeader {
+    margin-bottom: 6rem;
+  }
+}
+
+@media screen and (min-width: 80rem) {
+  .heroHeader {
+    margin-bottom: 8rem;
+  }
+}
+
 .title,
 .content,
 .linkContainer {
