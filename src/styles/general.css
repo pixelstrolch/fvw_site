@@ -382,7 +382,7 @@ button:active {
 /*focus styles*/
 .radioWrapper input:focus + label::before,
 .checkboxWrapper input:focus + label::before {
-  box-shadow: 0 0 0 3px var(--color-one);
+  box-shadow: 0 0 0 3px hsl(var(--color-one-h), var(--color-one-s), 75%);
   outline: 2px solid transparent; /* For Windows high contrast mode. */
 }
 
