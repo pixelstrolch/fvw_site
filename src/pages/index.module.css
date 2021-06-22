@@ -6,11 +6,19 @@
   max-width: 100%;
 }
 
-@media screen and (min-width: 80rem) {
+@media screen and (min-width: 60rem) {
   .blog,
   .events,
   .newsletter {
     margin-bottom: 6rem;
+  }
+}
+
+@media screen and (min-width: 80rem) {
+  .blog,
+  .events,
+  .newsletter {
+    margin-bottom: 8rem;
     width: var(--content-w-wide);
   }
 }

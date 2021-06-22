@@ -62,9 +62,8 @@ collections:
       - name: title
         label: Titel
       - name: metaDescription
-        label: Beschreibung (Suchmaschinenoptimierung)
+        label: Beschreibe diesen Beitrag in ein bis zwei Sätzen (Suchmaschinenoptimierung)
         widget: text
-        required: false
       - name: featuredImage
         label: Beitragsbild
         required: false
@@ -73,12 +72,14 @@ collections:
           - name: thumbnail
             label: Beitragsbild
             widget: image
+            required: false
             media_library:
               config:
                 multiple: false
           - name: alt
             label: Alt text (Was ist auf dem Bild zu sehen in ein, zwei Sätzen?)
             widget: string
+            required: false
       - name: body
         label: Body
         widget: markdown
