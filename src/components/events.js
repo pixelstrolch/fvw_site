@@ -4,7 +4,7 @@ const EventRows = ({ event }) => (
   <tr>
     <td>{event.was}</td>
     <td>{event.wann}</td>
-    <td>{event.wo}</td>
+    <td>{event.wer}</td>
   </tr>
 )
 

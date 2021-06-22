@@ -42,7 +42,7 @@ const IndexPage = ({
             <tr>
               <th>Was</th>
               <th>Wann</th>
-              <th>Wo</th>
+              <th>Wer</th>
             </tr>
           </thead>
           <tbody>{EventRows}</tbody>
@@ -97,7 +97,7 @@ export const pageQuery = graphql`
         id
         wann
         was
-        wo
+        wer
       }
     }
   }
