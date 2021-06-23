@@ -53,14 +53,11 @@ collections:
         label: Template
         widget: hidden
         default: BlogPost
-      - name: path
-        label: Pfad
-        widget: string
+      - name: title
+        label: Titel
       - name: date
         label: Datum
         widget: datetime
-      - name: title
-        label: Titel
       - name: metaDescription
         label: Beschreibe diesen Beitrag in ein bis zwei Sätzen (Suchmaschinenoptimierung)
         widget: text
