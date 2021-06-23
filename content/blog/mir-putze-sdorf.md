@@ -4,7 +4,7 @@ title: Mir putze sDorf
 date: 2021-06-23T18:27:02.163Z
 metaDescription: Mir putze sDorf
 featuredImage:
-  thumbnail: ""
+  thumbnail: /uploads/img_20210529_140638.jpg
   alt: ""
 ---
 Voller Vorfreude und etwas aufgeregt durften wir am Samstag, 29.05.2021, unseren ersten Anlass durchführen. Wir waren überwältigt über die vielen Anmeldungen, die uns ein Corona-konformes Einteilen der Gruppen ermöglichten. 
