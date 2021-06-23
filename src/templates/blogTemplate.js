@@ -63,7 +63,6 @@ export const pageQuery = graphql`
       frontmatter {
         date
         title
-        path
         featuredImage {
           thumbnail {
             childImageSharp {
