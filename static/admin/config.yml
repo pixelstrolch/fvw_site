@@ -8,6 +8,12 @@ public_folder: /uploads
 
 locale: "de"
 
+logo_url: https://familienverein-wahlen.ch/uploads/Logo-FamilienvereinWahlen.svg
+
+slug:
+  encoding: "ascii"
+  clean_accents: true
+
 collections:
   - name: settings
     label: Seiteneinstellungen
@@ -46,7 +52,8 @@ collections:
   - name: blog
     label: Beiträge
     folder: content/blog
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}"
+    preview_path: "preview/{{slug}}"
     create: true
     fields:
       - name: template
