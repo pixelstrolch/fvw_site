@@ -73,10 +73,12 @@ collections:
             media_library:
               config:
                 multiple: false
+            default: ""
           - name: alt
             label: Alt text (Was ist auf dem Bild zu sehen in ein, zwei Sätzen?)
             widget: string
             required: false
+            default: ""
       - name: body
         label: Body
         widget: markdown
