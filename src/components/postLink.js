@@ -7,7 +7,7 @@ import * as style from "./postLink.module.css";
 const Posts = ({ post }) => (
   <article className={style.card}>
     {post.frontmatter.featuredImage.thumbnail && (
-      <Link to={post.frontmatter.path} className={style.thumbnailLink}>
+      <Link to={post.fields.slug} className={style.thumbnailLink}>
         <GatsbyImage
           image={getImage(post.frontmatter.featuredImage.thumbnail)}
           aspectRatio={16 / 9}
@@ -16,7 +16,7 @@ const Posts = ({ post }) => (
       </Link>
     )}
     <header>
-      <Link to={post.frontmatter.path}>
+      <Link to={post.fields.slug}>
         <h2 className={style.title}>{post.frontmatter.title}</h2>
       </Link>
       <p className={style.meta}>
