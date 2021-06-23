@@ -47,7 +47,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     createPage({
       path: node.fields.slug,
       component: blogPostTemplate,
-      context: {}, // additional data can be passed via context
+      context: {
+        // Data passed to context is available
+        // in page queries as GraphQL variables.
+        slug: node.fields.slug
+      },
     })
   })
 }
