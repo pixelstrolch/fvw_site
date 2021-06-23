@@ -1,4 +1,18 @@
 const path = require(`path`)
+const { createFilePath } = require(`gatsby-source-filesystem`)
+
+// Create slug nodes based on folder
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  if (node.internal.type === `MarkdownRemark`) {
+    const slug = createFilePath({ node, getNode, basePath: `content` })
+
+    actions.createNodeField({
+      node,
+      name: `slug`,
+      value: `${slug}`,
+    })
+  }
+}
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
@@ -14,8 +28,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         edges {
           node {
             id
-            frontmatter {
-              path
+            fields {
+              slug
             }
           }
         }
@@ -31,9 +45,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
-      path: node.frontmatter.path,
+      path: node.fields.slug,
       component: blogPostTemplate,
-      context: {}, // additional data can be passed via context
+      context: {
+        // Data passed to context is available
+        // in page queries as GraphQL variables.
+        slug: node.fields.slug
+      },
     })
   })
 }

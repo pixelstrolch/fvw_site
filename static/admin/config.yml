@@ -53,14 +53,11 @@ collections:
         label: Template
         widget: hidden
         default: BlogPost
-      - name: path
-        label: Pfad
-        widget: string
+      - name: title
+        label: Titel
       - name: date
         label: Datum
         widget: datetime
-      - name: title
-        label: Titel
       - name: metaDescription
         label: Beschreibe diesen Beitrag in ein bis zwei Sätzen (Suchmaschinenoptimierung)
         widget: text
@@ -76,10 +73,12 @@ collections:
             media_library:
               config:
                 multiple: false
+            default: ""
           - name: alt
             label: Alt text (Was ist auf dem Bild zu sehen in ein, zwei Sätzen?)
             widget: string
             required: false
+            default: ""
       - name: body
         label: Body
         widget: markdown

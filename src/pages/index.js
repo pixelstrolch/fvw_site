@@ -76,9 +76,11 @@ export const pageQuery = graphql`
         node {
           id
           excerpt(pruneLength: 250)
+          fields {
+            slug
+          }
           frontmatter {
             date
-            path
             title
             featuredImage {
               thumbnail {
