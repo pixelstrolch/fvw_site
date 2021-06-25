@@ -151,6 +151,14 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: 'gatsby-plugin-matomo',
+      options: {
+        siteId: '6',
+        matomoUrl: 'https://stats.pixelstrol.ch',
+        siteUrl: 'https://accessible-pdf.info'
+      }
+    },
     `gatsby-plugin-netlify-cms`,
     // siteURL is a must for sitemap generation
     `gatsby-plugin-sitemap`,
