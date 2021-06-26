@@ -159,6 +159,19 @@ module.exports = {
         siteUrl: 'https://accessible-pdf.info'
       }
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+          name: `Familienverein Wahlen`,
+          short_name: `Familienverein Wahlen`,
+          start_url: `/`,
+          lang: `de`,
+          icon: `static/uploads/icon.svg`,
+          background_color: `#f8f9fa`,
+          theme_color: `#eb5b33`,
+          display: `standalone`,
+      },
+    },
     `gatsby-plugin-netlify-cms`,
     // siteURL is a must for sitemap generation
     `gatsby-plugin-sitemap`,
