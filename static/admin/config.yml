@@ -28,10 +28,6 @@ collections:
             name: title
             label: Titel der Website
             required: true
-          - widget: string
-            name: siteUrl
-            label: Adresse der Website
-            required: true
           - widget: text
             name: description
             label: Beschreibung
