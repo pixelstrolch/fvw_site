@@ -9,6 +9,9 @@ require(`dotenv`).config();
 module.exports = {
   /* Your site config here */
   siteMetadata: require(`./site-meta-data.json`),
+  siteMetadata: {
+    siteUrl: `https://familienverein-wahlen.ch`
+  },
   plugins: [
     // Add static assets before markdown files
     {
